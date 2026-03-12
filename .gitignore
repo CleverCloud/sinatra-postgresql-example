@@ -1,3 +1,4 @@
 /.bundle
 /.env
 /db/schema.rb
+.clever.json

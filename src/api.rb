@@ -5,7 +5,7 @@ require 'sinatra/activerecord'
 require 'sinatra/base'
 require 'sinatra/json'
 require 'sinatra/reloader'
-require 'uuid'
+require 'securerandom'
 
 require_relative '../models/user'
 
@@ -24,7 +24,7 @@ class DemoApi < Sinatra::Base
     request.body.rewind
     name = request.body.read.strip
     halt 400 if name.empty?
-    user = User.create(user_id: UUID.generate, name: name)
+    user = User.create(user_id: SecureRandom.uuid, name: name)
     halt 400 unless user.valid?
     json user
   end

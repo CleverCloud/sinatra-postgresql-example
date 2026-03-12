@@ -1,7 +1,4 @@
 AllCops:
-  TargetRubyVersion: 2.4
   Exclude:
-    - 'db/schema.rb'
-
-Style/Documentation:
-  Enabled: no
+    - 'vendor/**/*'
+  TargetRubyVersion: 4.0
